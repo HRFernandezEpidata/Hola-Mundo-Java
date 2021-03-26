@@ -11,6 +11,7 @@ pool:
 
 steps:
 - task: Maven@3
+  displayName: Compilación de Maven
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -20,5 +21,6 @@ steps:
     goals: 'package'
   
 - task: CmdLine@2
+  displayName: Ejecutar .jar
   inputs:
     script: 'java -jar /home/vsts/work/1/s/target/hola-mundo-0.0.1-SNAPSHOT.jar'
